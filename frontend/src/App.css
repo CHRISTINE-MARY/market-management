@@ -1,0 +1,62 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-image: url();
+}
+:root {
+  --primary-color: rgb(75, 75, 126);
+  --secondary-color: rgb(165, 42, 42);
+  --tertiary-color: rgb(76, 175, 80);
+  --imp: rgb(255, 0, 0);
+  --black: rgb(0, 0, 0);
+  --white: rgb(255, 255, 255);
+  --grey: rgb(204, 204, 204);
+}
+
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: white;
+  color: rgb(93, 93, 222);
+  padding: 1rem 1.5rem;
+  border: 1px solid rgb(93, 93, 222);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 1000;
+
+  /* Animation */
+  transform: translateX(150%);
+  animation: slide-in 0.4s forwards, slide-out 0.4s forwards 4.6s;
+}
+
+@keyframes slide-in {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out {
+  to {
+    transform: translateX(150%);
+  }
+}
+
+.toast .close-btn {
+  background: none;
+  border: none;
+  color: rgb(93, 93, 222);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  margin-left: auto;
+}
+
+.toast .close-btn:hover {
+  color: #ff6b6b;
+}

@@ -1,0 +1,93 @@
+.calendar {
+  position: absolute;
+  top: 2rem; 
+  left: 2rem;
+  z-index: 10;
+}
+
+.overview-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-top: 5rem;
+}
+
+.overview-card {
+  background-color: var(--white);
+  border: 1px solid var(--grey);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 600px;
+  height: 500px; 
+  overflow-y: auto; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  scrollbar-width: thin;
+  scrollbar-color: var(--black) transparent;
+}
+
+
+.overview-card h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  border-bottom: 1px solid var(--white);
+  padding-bottom: 0.5rem;
+}
+
+.overview-card div {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.overview-card strong {
+  color: var(--black);
+}
+.stock-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.stock-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.product-name {
+  font-weight: bold;
+  flex: 1;
+  color: var(--black);
+}
+
+.colon {
+  margin: 0 0.5rem;
+}
+
+.stock {
+  color: var(--black);
+  font-weight: 500;
+  min-width: 30px;
+  text-align: right;
+}
+
+.stock-row .heading {
+  color: var(--tertiary-color);
+  font-weight: bold;
+}
+
+.total-revenue {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--imp);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

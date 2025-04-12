@@ -6,7 +6,9 @@ import Dashboard from "./pages/dashboard";
 import StockForm from "./pages/StockForm";
 import Overview from "./pages/Overview";
 import Login from "./pages/Login";
-import "./App.css"
+import Register from "./pages/Register";
+
+import "./App.css";
 import { MessageProvider } from "./context/MessageContext";
 export default function App() {
   return (
@@ -15,6 +17,7 @@ export default function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Login />} />
+            <Route path="/register" element={<Register />} />
             <Route
               path="/dashboard"
               element={

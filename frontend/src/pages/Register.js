@@ -1,45 +1,53 @@
 import { useState } from "react";
 import API from "../services/api";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useMessage } from "../context/MessageContext";
 import "../styles/login.css";
 
-const Login = () => {
+const Register = () => {
   const { login } = useAuth();
+  const { message, updateMessage } = useMessage();
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const { message, updateMessage } = useMessage();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await API.post("auth/login", { email, password });
-      login(res.data.token);
-      updateMessage("logged in succesfully");
-      navigate("/dashboard");
+      const res = await API.post("auth/register", { name, email, password });
+      updateMessage("Registered successfully");
+      navigate("/");
     } catch (err) {
-      updateMessage("Invalid login");
+      updateMessage("registration  failed");
     }
   };
 
   return (
     <div className="login">
       <form onSubmit={handleSubmit}>
-        <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+        <input
+          placeholder="Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
         <input
           type="password"
           placeholder="Password"
+          value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button>Login</button>
-        <Link to="/register" className="register">
-          No account?Register
-        </Link>
+        <button>Register</button>
       </form>
       <div className="message">
         {message && (
-          <div className={`toast`}>
+          <div className="toast">
             <span>{message}</span>
             <button className="close-btn" onClick={() => updateMessage("")}>
               &times;
@@ -51,4 +59,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

@@ -6,6 +6,6 @@ const router = Router();
 
 router.use("/product", productRoutes);
 router.use("/sale", salesRoutes);
-router.use("/auth",authRoutes);
+router.use("/auth", authRoutes);
 
 export default router;

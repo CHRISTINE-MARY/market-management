@@ -6,6 +6,7 @@ import {
   deleteProduct,
 } from "../models/product.model.js";
 
+//to get all products
 export const allProducts = async (req, res) => {
   try {
     const results = await getProducts();
@@ -15,6 +16,7 @@ export const allProducts = async (req, res) => {
   }
 };
 
+//to search product by id
 export const oneProduct = async (req, res) => {
   const { id } = req.body;
   try {
@@ -25,6 +27,7 @@ export const oneProduct = async (req, res) => {
   }
 };
 
+//adds new product
 export const newProduct = async (req, res) => {
   const { Name, Category, Price, Stock, Desc } = req.body;
   try {
@@ -40,6 +43,7 @@ export const newProduct = async (req, res) => {
   }
 };
 
+//updates product details
 export const UpdateProduct = async (req, res) => {
   const { id, ...updates } = req.body;
 
@@ -55,6 +59,7 @@ export const UpdateProduct = async (req, res) => {
   }
 };
 
+//delete product
 export const DeleteProduct = async (req, res) => {
   const { id } = req.body;
   try {

@@ -1,5 +1,6 @@
 import { addSales, getSales } from "../models/sale.model.js";
 
+//new sale
 export const newSale = async (req, res) => {
   const { id, quantity } = req.body;
 
@@ -11,6 +12,7 @@ export const newSale = async (req, res) => {
   }
 };
 
+//list all sales
 export const allSales = async (req, res) => {
   const { date } = req.body;
   try {
@@ -23,18 +25,17 @@ export const allSales = async (req, res) => {
   }
 };
 
+//list sales for given date
 export const todaySales = async (req, res) => {
   const { date } = req.body;
 
   try {
     const response = await getSales(date);
-    res
-      .status(201)
-      .json({
-        success: true,
-        data: response.products,
-        revenue: response.totalRevenue,
-      });
+    res.status(201).json({
+      success: true,
+      data: response.products,
+      revenue: response.totalRevenue,
+    });
   } catch (err) {
     res.status(401).json({ success: false, message: err.message });
   }

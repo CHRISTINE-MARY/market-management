@@ -1,6 +1,6 @@
 .calendar {
   position: absolute;
-  top: 2rem; 
+  top: 2rem;
   left: 2rem;
   z-index: 10;
 }
@@ -21,13 +21,12 @@
   border-radius: 1rem;
   padding: 1.5rem;
   width: 600px;
-  height: 500px; 
-  overflow-y: auto; 
+  height: 500px;
+  overflow-y: auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   scrollbar-width: thin;
   scrollbar-color: var(--black) transparent;
 }
-
 
 .overview-card h2 {
   color: var(--primary-color);

@@ -1,27 +1,27 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from "react";
 
-// Create the context
+// context
 const MessageContext = createContext();
 
-// Create a provider component
+//  provider component
 export const MessageProvider = ({ children }) => {
-    const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
 
-    const updateMessage = (newMessage) => {
-        setMessage(newMessage);
-        setTimeout(() => {
-            setMessage('');
-        }, 5000); // Clear the message after 5 seconds
-    };
+  const updateMessage = (newMessage) => {
+    setMessage(newMessage);
+    setTimeout(() => {
+      setMessage("");
+    }, 5000); // Clear the message after 5 seconds
+  };
 
-    return (
-        <MessageContext.Provider value={{ message, updateMessage }}>
-            {children}
-        </MessageContext.Provider>
-    );
+  return (
+    <MessageContext.Provider value={{ message, updateMessage }}>
+      {children}
+    </MessageContext.Provider>
+  );
 };
 
 // Custom hook to use the MessageContext
 export const useMessage = () => {
-    return useContext(MessageContext);
+  return useContext(MessageContext);
 };

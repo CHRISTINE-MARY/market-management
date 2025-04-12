@@ -10,8 +10,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-
-
 const MONGO_URI = process.env.MONGO_URI;
 
 app.use("/api", indexRoute);
@@ -25,4 +23,3 @@ mongoose
   .catch((err) => {
     process.exit(1);
   });
-

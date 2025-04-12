@@ -9,15 +9,15 @@
   display: flex;
   flex-direction: column;
   border: 3px solid var(--primary-color);
-  align-items: center;
   border-radius: 1rem;
-  padding: 3rem;
+  padding: 2rem;
   font-size: 1rem;
   gap: 1rem;
 }
 .login form input {
-  padding: 0.5rem;
-  width: 130%;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  font-size: 1em;
   border-radius: 0.5rem;
   border: 1px solid var(--grey);
 }
@@ -33,4 +33,12 @@
   color: var(--black);
   background: none;
   border: 1px solid var(--black);
+}
+
+.login .register {
+  color: var(--primary-color);
+  padding-left: 0;
+}
+.login .register:hover {
+  color: var(--tertiary-color);
 }

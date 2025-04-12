@@ -3,11 +3,11 @@ import StockSummary from "../features/StockSummary";
 import DailyRevenue from "../features/DailyRevenue";
 import Calendar from "../features/Calendar";
 import { useMessage } from "../context/MessageContext";
-import "../styles/overview.css"
+import "../styles/overview.css";
 
 export default function Overview() {
   const [currDate, setCurrDate] = useState(new Date());
-  const {message,updateMessage}=useMessage();
+  const { message, updateMessage } = useMessage();
 
   return (
     <>
@@ -22,14 +22,16 @@ export default function Overview() {
           <DailyRevenue date={currDate} />
         </div>
       </section>
-      <div>{message && (
+      <div>
+        {message && (
           <div className={`toast`}>
             <span>{message}</span>
             <button className="close-btn" onClick={() => updateMessage("")}>
               &times;
             </button>
           </div>
-        )}</div>
+        )}
+      </div>
     </>
   );
 }

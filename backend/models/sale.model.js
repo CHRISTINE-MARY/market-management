@@ -26,12 +26,11 @@ export const addSales = async (id, quantity) => {
 export const getSales = async (date) => {
   try {
     const start = new Date(date);
-    start.setUTCHours(0, 0, 0, 0); // set to 00:00:00.000 UTC
+    start.setUTCHours(0, 0, 0, 0);
 
     const end = new Date(start);
     end.setUTCDate(end.getUTCDate() + 1);
 
-    // Find sales within the date range
     const sales = await Sale.find({
       Date: { $gte: start, $lt: end },
     });

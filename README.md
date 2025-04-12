@@ -1,6 +1,6 @@
-# Task Divider - MERN Stack Project
+# Market management - MERN Stack Project
 
-Task Divider is a task management application built using the MERN (MongoDB, Express.js, React, Node.js) stack.
+A market stock manager application built using the MERN (MongoDB, Express.js, React, Node.js) stack.
 
 ## Features
 - User authentication  
@@ -16,7 +16,7 @@ Task Divider is a task management application built using the MERN (MongoDB, Exp
 - **Authentication:** JWT (JSON Web Tokens)  
 - **HTTP Requests:** Axios  
 
-## ⚡ Setup  
+##  Setup  
 
 ### 1️⃣ Clone the Repository  
 ```sh
